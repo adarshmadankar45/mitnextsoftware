@@ -19,20 +19,20 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="{% url 'index' %}">Home</a></li>
-                        <li><a href="{% url 'about-us' %}">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="{% url 'web_development' %}">Web Development</a></li>
-                        <li><a href="{% url 'mobile_development' %}">Mobile Apps</a></li>
-                        <li><a href="{% url 'software_testing' %}">QA & Testing</a></li>
-                        <li><a href="{% url 'ui_ux_design' %}">UI/UX Design</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-development.html">Mobile Development</a></li>
+                        <li><a href="software-testing.html">QA & Testing</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -59,12 +59,21 @@
 </footer>
 
 
-    <script src="/static/js/header-footer.js"></script>
-    <script src="/static/js/scripts.js"></script>
-    <script src="/static/js/about.js"></script>
-    <script src="/static/js/portfolio.js"></script>
-    <script src="/static/js/contact.js"></script>
-    <script src="/static/js/mobile_development.js"></script>
+    <script src="js/header-footer.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/mobile_development.js"></script>
 
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header-placeholder").innerHTML = data);
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+</script>
 </body>
 </html>
