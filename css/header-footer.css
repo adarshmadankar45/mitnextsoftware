@@ -1,0 +1,446 @@
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    background: #292a47;
+    backdrop-filter: white(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    background: rgba(10, 10, 18, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.containers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Styles */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.logo{
+background-color: #ffffff10;
+padding: 10px;
+border-radius: 8px;
+filter: brightness(100px);
+}
+.logo img {
+    height: 60px;
+    transition: all 0.3s ease;
+
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2a52be; /* Dark blue for "MIT NEXT" - adjust to match */
+    margin-left: 10px;
+}
+
+.logo-highlight {
+    color: #ff7f50; /* Coral for highlight/accent - adjust to match */
+}
+
+/* If you have additional text elements in your logo */
+.logo-subtext {
+    color: #696969; /* Dim gray for "Software & Services" - adjust */
+}
+
+.logo-smalltext {
+    color: #a9a9a9; /* Dark gray for "Private Limited" - adjust */
+}
+
+
+.header.scrolled .logo img {
+    height: 35px;
+}
+
+/* Navigation Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #00f5ff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00f5ff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.dropdown-icon {
+    margin-left: 5px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a2e;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    padding: 10px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.dropdown-item {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #b8b8c0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-link:hover {
+    color: white;
+    background: rgba(0, 245, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.dropdown-link .dropdown-icon {
+    margin-right: 10px;
+    font-size: 1em;
+    color: #00f5ff;
+}
+
+/* CTA Button Styles */
+.cta-item {
+    margin-left: 20px;
+}
+
+.btn-quote {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-quote:hover {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+.btn-icon {
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .nav-item {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
+        background: #0a0a12;
+        transition: all 0.5s ease;
+        padding: 30px;
+        overflow-y: auto;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        margin-top: 10px;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .cta-item {
+        margin: 20px 0 0;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background: #1a1a2e; /* Dark blue similar to header but slightly darker */
+    color: #ffffff; /* White text */
+    position: relative;
+    padding-top: 40px; /* Slightly more compact than before */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer::before {
+    content: none;
+
+}
+
+.footer-top {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-col {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-col p {
+    color: #b8b8c0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1); /* Slightly visible circles */
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #00f5ff; /* Cyan hover */
+    color: #1a1a2e;
+    transform: translateY(-3px);
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #00f5ff, #2a52be);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    color: #b8b8c0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #00f5ff;
+    transform: translateX(5px);
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #b8b8c0;
+}
+
+.footer-contact li i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    margin-top: 3px;
+}
+
+.footer-bottom {
+    background: #0a0a12; /* Even darker shade for bottom section */
+    padding: 15px 0;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: #696969;;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    color: #696969;
+}
+
+.footer-links a {
+    color: #696969;
+    font-size: 0.9rem;
+}
+
+
+

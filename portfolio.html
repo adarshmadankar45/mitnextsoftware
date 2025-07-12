@@ -1,0 +1,162 @@
+{% include 'header.html' %}
+<body>
+<main>
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="hero-contentss" >
+                <h1 class="hero-title">Our Portfolio</h1>
+                <p class="hero-description" data-animate="fadeIn" data-delay="0.2s">
+                    Explore our latest projects and see how we've helped businesses succeed with innovative digital solutions
+                </p>
+                <div class="hero-btns" data-animate="fadeIn" data-delay="0.4s">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Get Started</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Elements -->
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="gradient-mesh"></div>
+    </section>
+
+    <!-- Portfolio Projects Section -->
+    <section id="projects" class="portfolio-projects section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-animate="fadeIn">Recent Projects</h2>
+                <p data-animate="fadeIn" data-delay="0.1s">Our latest work that showcases our expertise</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 - Right aligned -->
+                <div class="project-item right-aligned" data-animate="fadeInRight">
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Our team built a custom e-commerce website for a national home goods retailer, resulting in increased sales and site traffic.</p>
+
+                    </div>
+                    <div class="project-image">
+                        <img src="../static/images/hero1.jpg" alt="E-Commerce Platform">
+                        <div class="image-frame"></div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Left aligned -->
+                <div class="project-item left-aligned" data-animate="fadeInLeft">
+                    <div class="project-image">
+                        <img src="../static/images/hero2.jpg" alt="Health & Fitness App">
+                        <div class="image-frame"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Health & Fitness Mobile App</h3>
+                        <p>We developed a mobile app for a health and fitness customer, resulting in increased user engagement and retention.</p>
+
+                    </div>
+                </div>
+
+                <!-- Project 3 - Right aligned -->
+                <div class="project-item right-aligned" data-animate="fadeInRight">
+                    <div class="project-content">
+                        <h3>Enterprise Web Application</h3>
+                        <p>Our team built a custom web application for a manufacturing company, streamlining their internal processes and resulting in increased efficiency.</p>
+
+                    </div>
+                    <div class="project-image">
+                        <img src="../static/images/hero3.jpg" alt="Enterprise Web Application">
+                        <div class="image-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating background elements -->
+        <div class="section-floating-elements">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="portfolio-cta section-padding">
+        <div class="container">
+            <div class="cta-content" data-animate="zoomIn">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact us today to discuss how we can help bring your ideas to life with our expertise</p>
+                <div class="cta-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get a Free Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+919881548706" class="btn btn-secondary">
+                        <span>Call Us Now</span>
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="custom-cursor"></div>
+<div class="cursor-click-effect"></div>
+</body>
+
+{% include 'footer.html' %}
+
+<!-- Additional Styles for Portfolio Page -->
+<style>
+    /* Project Tech Tags */
+    .project-tech {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .project-tech span {
+        background: rgba(0, 245, 255, 0.1);
+        color: var(--accent-color);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        border: 1px solid rgba(0, 245, 255, 0.3);
+    }
+
+    /* CTA Buttons */
+    .cta-btns {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Image Frame Animation */
+    .image-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid rgba(0, 245, 255, 0.3);
+        border-radius: 10px;
+        pointer-events: none;
+        z-index: 3;
+        transition: all 0.5s ease;
+    }
+
+    .project-item:hover .image-frame {
+        border-color: rgba(0, 245, 255, 0.8);
+        transform: scale(0.95);
+    }
+</style>

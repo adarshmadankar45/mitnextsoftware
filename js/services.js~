@@ -1,0 +1,71 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced Intersection Observer for service cards
+    const animateServices = () => {
+        const sectionTitle = document.querySelector('.services-section .section-title');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate section title
+                    if (entry.target === sectionTitle) {
+                        entry.target.classList.add('animated');
+                    }
+
+                    // Animate service cards with staggered delay
+                    if (entry.target.classList.contains('service-card')) {
+                        const index = Array.from(serviceCards).indexOf(entry.target);
+                        entry.target.style.transitionDelay = `${index * 0.15}s`;
+                        entry.target.classList.add('animated');
+                    }
+
+                    // Unobserve after animation
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        if (sectionTitle) observer.observe(sectionTitle);
+        serviceCards.forEach(card => observer.observe(card));
+
+        // Add hover effect to service cards
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+    };
+
+    // Initialize animations
+    animateServices();
+
+    // Add GSAP animations for extra smoothness
+    if (typeof gsap !== 'undefined') {
+        gsap.registerEffect({
+            name: "fadeUp",
+            defaults: {duration: 0.8, y: 50, ease: "power3.out"},
+            effect: (targets, config) => {
+                return gsap.from(targets, {
+                    opacity: 0,
+                    y: config.y,
+                    duration: config.duration,
+                    ease: config.ease,
+                    stagger: 0.15
+                });
+            }
+        });
+
+        const serviceCards = document.querySelectorAll('.service-card');
+        gsap.effects.fadeUp(serviceCards);
+    }
+});

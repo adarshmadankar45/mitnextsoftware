@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT NEXT - Software Development Company</title>
+
+    <link rel="stylesheet" href="/static/css/header-footer.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/about.css">
+    <link rel="stylesheet" href="/static/css/portfolio.css">
+    <link rel="stylesheet" href="/static/css/contact.css">
+    <link rel="stylesheet" href="/static/css/mobile_development.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+     <header class="header">
+        <div class="containers">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <img src="../static/images/logo1.png" alt="MIT NEXT Logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'about-us' %}" class="nav-link">About</a></li>
+
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'web_development' %}" class="dropdown-link">Web Development</a></li>
+                            <li><a href="{% url 'mobile_development' %}" class="dropdown-link">Mobile Development</a></li>
+                            <li><a href="{% url 'software_testing' %}" class="dropdown-link">QA & Testing</a></li>
+                            <li><a href="{% url 'ui_ux_design' %}" class="dropdown-link">UI/UX Design</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+                    <li class="nav-item cta-item"><a href="#quote" class="btn btn-quote">Get a Quote</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
