@@ -1,5 +1,5 @@
-{% include 'header.html' %}
 <body>
+    <div id="header-placeholder"></div>
 <main>
 
     <!-- Hero Section -->
@@ -282,5 +282,14 @@
 </main>
 <div class="custom-cursor"></div>
 <div class="cursor-click-effect"></div>
+    <div id="footer-placeholder"></div>
+    <script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("header-placeholder").innerHTML = data);
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+</script>
 </body>
-{% include 'footer.html' %}
