@@ -455,18 +455,37 @@
 <div class="custom-cursor"></div>
 <div class="cursor-click-effect"></div>
 
-    <script>
-  fetch('./header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
-    });
+   <script>
+function loadHTML(selector, file) {
+  fetch(file)
+    .then(res => res.text())
+    .then(html => {
+      const container = document.getElementById(selector);
+      container.innerHTML = html;
 
-  fetch('./footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
+      // Manually load any scripts
+      container.querySelectorAll("script").forEach(script => {
+        const newScript = document.createElement("script");
+        if (script.src) {
+          newScript.src = script.src;
+        } else {
+          newScript.textContent = script.textContent;
+        }
+        document.body.appendChild(newScript);
+      });
+
+      // Manually add CSS if needed
+      container.querySelectorAll("link[rel='stylesheet']").forEach(link => {
+        const newLink = document.createElement("link");
+        newLink.rel = "stylesheet";
+        newLink.href = link.href;
+        document.head.appendChild(newLink);
+      });
     });
+}
+
+loadHTML("header-placeholder", "header.html");
+loadHTML("footer-placeholder", "footer.html");
 </script>
 
 </body>
