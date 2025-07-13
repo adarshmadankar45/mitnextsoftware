@@ -1,5 +1,58 @@
-{% include 'header.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT NEXT - Software Development Company</title>
+
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/mobile_development.css">
+
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
 <body>
+     <header class="header">
+        <div class="containers">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <img src="images/logo1.png" alt="MIT NEXT Logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="navbar">
+                  <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                      <a href="#">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="mobile-development.html">Mobile Development</a></li>
+                            <li><a href="software-testing.html">QA & Testing</a></li>
+                            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-item cta-item"><a href="#quote" class="btn btn-quote">Get a Quote</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         
+    </header>
 <main>
     <!-- Portfolio Hero Section -->
     <section class="portfolio-hero">
@@ -110,9 +163,75 @@
 </main>
 <div class="custom-cursor"></div>
 <div class="cursor-click-effect"></div>
+    <footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">
+                            <span>MIT NEXT</span>
+                        </a>
+                    </div>
+                    <p>Innovative software solutions to transform your business.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-development.html">Mobile Development</a></li>
+                        <li><a href="software-testing.html">QA & Testing</a></li>
+                        <li><a href="ui-ux-design.html">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Tech Park, Bangalore</li>
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@mitnextsoftware.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="copyright">
+                &copy; 2025 MIT NEXT Software & Services
+            </div>
+            <div class="footer-links">
+                <a href="#">Designed & Developed By Adarsh Madankar</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/header-footer.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/mobile_development.js"></script>
+</footer>
 </body>
 
-{% include 'footer.html' %}
+
 
 <!-- Additional Styles for Portfolio Page -->
 <style>
