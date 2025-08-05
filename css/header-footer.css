@@ -1,3 +1,173 @@
+/* MITNEXT Header Styles - Unique Class Names */
+.mn-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    background: rgba(10, 10, 18, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mn-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Styles */
+.mn-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mn-logo:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.mn-logo-img {
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.mn-logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.mn-logo-highlight {
+    color: #00f5ff;
+}
+
+/* Navigation Styles */
+.mn-nav {
+    display: flex;
+    align-items: center;
+}
+
+.mn-nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+.mn-nav-item {
+    position: relative;
+}
+
+.mn-nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.mn-nav-link:hover {
+    color: #00f5ff;
+}
+
+.mn-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00f5ff;
+    transition: width 0.3s ease;
+}
+
+.mn-nav-link:hover::after {
+    width: 100%;
+}
+
+/* CTA Button */
+.mn-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 25px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.mn-cta-btn:hover {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Mobile Menu Button */
+.mn-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .mn-nav-list {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mn-mobile-btn {
+        display: block;
+    }
+
+    .mn-nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background: #0a0a12;
+        flex-direction: column;
+        padding: 30px;
+        transition: all 0.5s ease;
+    }
+
+    .mn-nav.active {
+        left: 0;
+    }
+
+    .mn-nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mn-cta-btn {
+        margin: 20px 0 0;
+    }
+}
 /* Header Styles */
 .header {
     position: fixed;
@@ -408,3 +578,4 @@
     color: #696969;
     font-size: 0.9rem;
 }
+
