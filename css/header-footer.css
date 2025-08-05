@@ -8,7 +8,7 @@
     padding: 20px 0;
     transition: all 0.3s ease;
     background: #292a47;
-    backdrop-filter: white(10px);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -18,7 +18,7 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.containers {
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +42,6 @@ filter: brightness(100px);
 .logo img {
     height: 60px;
     transition: all 0.3s ease;
-
 }
 
 .logo-text {
@@ -65,7 +64,6 @@ filter: brightness(100px);
     color: #a9a9a9; /* Dark gray for "Private Limited" - adjust */
 }
 
-
 .header.scrolled .logo img {
     height: 35px;
 }
@@ -81,6 +79,7 @@ filter: brightness(100px);
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .nav-item {
@@ -220,6 +219,7 @@ filter: brightness(100px);
     font-size: 1.5rem;
     cursor: pointer;
     padding: 5px;
+    z-index: 1001;
 }
 
 /* Responsive Styles */
@@ -256,6 +256,7 @@ filter: brightness(100px);
 
     .nav-item {
         margin: 15px 0;
+        width: 100%;
     }
 
     .dropdown-menu {
@@ -268,6 +269,7 @@ filter: brightness(100px);
         background: transparent;
         margin-top: 10px;
         display: none;
+        padding-left: 15px;
     }
 
     .dropdown:hover .dropdown-menu {
@@ -290,7 +292,6 @@ filter: brightness(100px);
 
 .footer::before {
     content: none;
-
 }
 
 .footer-top {
@@ -441,6 +442,3 @@ filter: brightness(100px);
     color: #696969;
     font-size: 0.9rem;
 }
-
-
-
