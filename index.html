@@ -22,43 +22,32 @@
     </div>
 
     
- <header class="header">
-        <div class="header-container">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="{% url 'index' %}">
-                    <img src="images/logo1.png" alt="MIT NEXT Logo">
-                </a>
-            </div>
-
-            <!-- Main Navigation -->
-            <nav class="navbar">
-                  <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="dropdown">
-                      <a href="#">Services</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="web-development.html">Web Development</a></li>
-                            <li><a href="mobile-development.html">Mobile Development</a></li>
-                            <li><a href="software-testing.html">QA & Testing</a></li>
-                            <li><a href="ui-ux-design.html">UI/UX Design</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li class="nav-item cta-item"><a href="#quote" class="btn btn-quote">Get a Quote</a></li>
-                </ul>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+ <header class="mn-header">
+    <div class="mn-header-container">
+        <!-- Logo -->
+        <div class="mn-logo">
+            <img src="images/logo1.png" alt="MIT NEXT Logo" class="mn-logo-img">
+            <div class="mn-logo-text">MIT<span class="mn-logo-highlight">NEXT</span></div>
         </div>
-         
-    </header>
+
+        <!-- Navigation -->
+        <nav class="mn-nav">
+            <ul class="mn-nav-list">
+                <li class="mn-nav-item"><a href="index.html" class="mn-nav-link">Home</a></li>
+                <li class="mn-nav-item"><a href="about.html" class="mn-nav-link">About</a></li>
+                <li class="mn-nav-item"><a href="services.html" class="mn-nav-link">Services</a></li>
+                <li class="mn-nav-item"><a href="portfolio.html" class="mn-nav-link">Portfolio</a></li>
+                <li class="mn-nav-item"><a href="contact.html" class="mn-nav-link">Contact</a></li>
+                <li class="mn-nav-item"><a href="#quote" class="mn-cta-btn">Get a Quote</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="mn-mobile-btn" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
     <main>
         <!-- Hero Section -->
 <!-- Hero Section -->
@@ -567,4 +556,5 @@
 
 </body>
 </html>
+
 
