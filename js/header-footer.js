@@ -114,4 +114,13 @@ window.addEventListener('load', function() {
         duration: 0.8,
         delay: 0.6
     });
+
 });
+document.addEventListener('DOMContentLoaded', function() {
+            const mobileBtn = document.querySelector('.mn-mobile-btn');
+            const navbar = document.querySelector('.mn-navbar');
+            
+            mobileBtn.addEventListener('click', function() {
+                navbar.classList.toggle('active');
+            });
+        });
